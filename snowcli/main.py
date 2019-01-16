@@ -6,32 +6,32 @@
 
 '''
 
-from typing import Union, Tuple, List
+from typing import Tuple, List
 
-import ***REMOVED***ck
 import json
+import ***REMOVED***ck
 
-from snow***REMOVED*** import conf
-from servicenow import ServiceNow, Connection
 from toolz.curried import pipe
+from servicenow import ServiceNow, Connection
+from snow***REMOVED*** import conf
 
-def __convert_to_dict(tuple_set:List[Tuple[str,str]])-> dict :
-	return { v[0]:v[1] for v in tuple_set }
+def __convert_to_dict(tuple_set: List[Tuple[str, str]])-> dict:
+    return {v[0]:v[1] for v in tuple_set}
 
-def __create_custom_table(custom_table:str):
+def __create_custom_table(custom_table: str):
     def _out(conn):
         custom = ServiceNow.Base(conn)
         custom.__table__ = custom_table
         return custom
     return _out
-    
+
 # TODO: Allow toggle in the future
 def __get_connection():
     # conn = Connection.Auth(
     #     username=conf.USERNAME, password=conf.PASSWORD,
     #     instance=conf.INSTANCE)
     return Connection.Auth(
-        username=conf.USERNAME, password=conf.PASSWORD, 
+        username=conf.USERNAME, password=conf.PASSWORD,
         instance=conf.INSTANCE, api='JSONv2')
 
 @***REMOVED***ck.option('--custom-table', 'custom', is_flag=True)
@@ -41,7 +41,7 @@ def __get_connection():
 @***REMOVED***ck.command()
 def main(table, action, param, custom):
     ''' Command '''
-    param=__convert_to_dict(param)
+    param = __convert_to_dict(param)
 
     try:
         pipe(
@@ -52,13 +52,13 @@ def main(table, action, param, custom):
             json.dumps,
             print
         )
-    except AttributeError as e:
-        print(e)
+    except AttributeError as err:
+        print(err)
         #TODO Figure out how to inspect to find caller of AttrErr
         # To return valid options
         print(conf.strings['error'])
         exit(1)
-    except Exception as e:
-        print(e)
+    except Exception as err: #pylint: disable=W0703
+        print(err)
         print(conf.strings['error'])
         exit(1)
