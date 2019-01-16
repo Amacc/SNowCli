@@ -5,6 +5,18 @@ jobs:
       - image: circleci/python:3.6
     steps:
       - checkout
-      - run: pip install -r requirements.txt --user
-      - run: pip install -r devrequirements.txt --user
-      - run: pylint snowcli.main
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - restore_cache:  # ensure this step occurs *before* installing dependencies
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      - run:
+          command: |
+            sudo pip install pipenv
+            pipenv install -r devrequirements
+            pylint snowcli.main
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.6/site-packages"
