@@ -20,3 +20,5 @@ jobs:
             - ".venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
+            - "/home/circleci/.local/share/virtualenvs"
+
