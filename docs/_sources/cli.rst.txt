@@ -73,7 +73,7 @@ The authentication used is JSONv2.
 
     >>{"parent": "", "made_sla": "true", ...
 
-**Fetch Server Example**:
+**Fetch Server Example**::
 
     snowcli Server fetch_one --param name Car-3
 
