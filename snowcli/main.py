@@ -42,6 +42,7 @@ def __get_connection():
 @click.argument('table')
 @click.command()
 def main(table, action, param, custom):
+    ''' Documentation: https://amacc.github.io/SNowCli/ '''
     param = __convert_to_dict(param)
 
     try:
