@@ -35,14 +35,13 @@ def __get_connection():
         instance=conf.INSTANCE, api='JSONv2')
 
 @click.option('--custom-table', 'custom', is_flag=True,
-    help="Used to interact with data in custom table")
+              help="Used to interact with data in custom table")
 @click.option('--param', 'param', multiple=True, type=click.Tuple([str, str]),
-    help="Used to pass paramaters to the servicenow query.")
+              help="Used to pass paramaters to the servicenow query.")
 @click.argument('action')
 @click.argument('table')
 @click.command()
 def main(table, action, param, custom):
-    ''' '''
     param = __convert_to_dict(param)
 
     try:
