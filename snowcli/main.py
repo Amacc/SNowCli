@@ -34,13 +34,15 @@ def __get_connection():
         username=conf.USERNAME, password=conf.PASSWORD,
         instance=conf.INSTANCE, api='JSONv2')
 
-@***REMOVED***ck.option('--custom-table', 'custom', is_flag=True)
-@***REMOVED***ck.option('--param', 'param', multiple=True, type=***REMOVED***ck.Tuple([str, str]))
+@***REMOVED***ck.option('--custom-table', 'custom', is_flag=True,
+    help="Used to interact with data in custom table")
+@***REMOVED***ck.option('--param', 'param', multiple=True, type=***REMOVED***ck.Tuple([str, str]),
+    help="Used to pass paramaters to the servicenow query.")
 @***REMOVED***ck.argument('action')
 @***REMOVED***ck.argument('table')
 @***REMOVED***ck.command()
 def main(table, action, param, custom):
-    ''' Command '''
+    ''' '''
     param = __convert_to_dict(param)
 
     try:

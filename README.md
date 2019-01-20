@@ -3,3 +3,6 @@
 
 # SNowCli
 Just playing around with ***REMOVED*** commands
+
+Documentation
+https://amacc.github.io/SNowCli
