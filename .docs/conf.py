@@ -3,6 +3,7 @@ author = 'adam McChesney'
 copyright = '2018, Adam Mcchesney'
 description = 'Just playing around with cli commands'
 exclude_patterns = ['_build','**/venv']
+extensions = ['sphinx_click.ext']
 html_theme = 'sphinx_rtd_theme'
 htmlhelp_basename = 'SnowCli'
 master_doc= 'index'
@@ -26,3 +27,7 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+import sys, os
+
+sys.path.append(os.path.abspath('..'))
