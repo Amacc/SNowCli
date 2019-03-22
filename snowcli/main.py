@@ -1,7 +1,7 @@
-''' Base module for ***REMOVED*** ***REMOVED***
+''' Base module for ***REMOVED***
 
-.. ***REMOVED***ck:: cloud***REMOVED***.main:main
-   :prog: cloud***REMOVED***
+.. ***REMOVED***ck:: snow***REMOVED***.main:main
+   :prog: snowclli
    :show-nested:
 
 '''
