@@ -1,7 +1,7 @@
-''' Base module for KochCloud cli
+''' Base module for cli
 
-.. click:: cloudcli.main:main
-   :prog: cloudcli
+.. click:: snowcli.main:main
+   :prog: snowclli
    :show-nested:
 
 '''
