@@ -13,7 +13,7 @@ jobs:
           command: |
             sudo pip install pipenv
             pipenv install -r devrequirements.txt
-            pipenv run pylint snow***REMOVED***.main
+            pipenv run pylint snowcli.main
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:

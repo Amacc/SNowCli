@@ -5,7 +5,7 @@ SNOWCLI
    :maxdepth: 2
    :caption: Contents:
 
-   ***REMOVED***
+   cli
 
 Indices and tables
 ==================

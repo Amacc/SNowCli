@@ -2,8 +2,8 @@ from setuptools import find_packages, setup
 
 setup(
     author='Adam Mcchesney',
-    name='snow***REMOVED***',
-    description='snow***REMOVED*** - playing around with ***REMOVED*** commands',
+    name='snowcli',
+    description='snowcli - playing around with cli commands',
     license=open('LICENSE').read(),
     long_description=open('README.md').read(),
     py_modules=find_packages(),
@@ -15,7 +15,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        snow***REMOVED***=snow***REMOVED***.main:main
+        snowcli=snowcli.main:main
     ''',
     classifiers=[
         "Programming Language :: Python :: 3",

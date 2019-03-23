@@ -1,14 +1,14 @@
 
 author = 'adam McChesney'
 copyright = '2018, Adam Mcchesney'
-description = 'Just playing around with ***REMOVED*** commands'
+description = 'Just playing around with cli commands'
 exclude_patterns = ['_build','**/venv']
-extensions = ['sphinx_***REMOVED***ck.ext']
+extensions = ['sphinx_click.ext']
 html_theme = 'sphinx_rtd_theme'
 htmlhelp_basename = 'SnowCli'
 master_doc= 'index'
-project = 'snow***REMOVED***'
-project_short_name ='snow***REMOVED***'
+project = 'snowcli'
+project_short_name ='snowcli'
 pygments_style = 'sphinx'
 todo_include_todos = True
 todo_link_only = True

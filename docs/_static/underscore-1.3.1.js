@@ -705,7 +705,7 @@
                a.ignoreCase == b.ignoreCase;
     }
     if (typeof a != 'object' || typeof b != 'object') return false;
-    // Assume equality for cy***REMOVED***c structures. The algorithm for detecting cy***REMOVED***c
+    // Assume equality for cyclic structures. The algorithm for detecting cyclic
     // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
     var length = stack.length;
     while (length--) {
@@ -876,7 +876,7 @@
     });
   };
 
-  // Generate a unique integer id (unique within the entire ***REMOVED***ent session).
+  // Generate a unique integer id (unique within the entire client session).
   // Useful for temporary DOM ids.
   var idCounter = 0;
   _.uniqueId = function(prefix) {

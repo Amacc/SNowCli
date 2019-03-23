@@ -50,51 +50,51 @@
   }
 
   function initEvents() {
-    $(document).on("***REMOVED***ck", 'a.comment-close', function(event) {
+    $(document).on("click", 'a.comment-close', function(event) {
       event.preventDefault();
       hide($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.vote', function(event) {
+    $(document).on("click", 'a.vote', function(event) {
       event.preventDefault();
       handleVote($(this));
     });
-    $(document).on("***REMOVED***ck", 'a.reply', function(event) {
+    $(document).on("click", 'a.reply', function(event) {
       event.preventDefault();
       openReply($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.close-reply', function(event) {
+    $(document).on("click", 'a.close-reply', function(event) {
       event.preventDefault();
       closeReply($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.sort-option', function(event) {
+    $(document).on("click", 'a.sort-option', function(event) {
       event.preventDefault();
       handleReSort($(this));
     });
-    $(document).on("***REMOVED***ck", 'a.show-proposal', function(event) {
+    $(document).on("click", 'a.show-proposal', function(event) {
       event.preventDefault();
       showProposal($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.hide-proposal', function(event) {
+    $(document).on("click", 'a.hide-proposal', function(event) {
       event.preventDefault();
       hideProposal($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.show-propose-change', function(event) {
+    $(document).on("click", 'a.show-propose-change', function(event) {
       event.preventDefault();
       showProposeChange($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.hide-propose-change', function(event) {
+    $(document).on("click", 'a.hide-propose-change', function(event) {
       event.preventDefault();
       hideProposeChange($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.accept-comment', function(event) {
+    $(document).on("click", 'a.accept-comment', function(event) {
       event.preventDefault();
       acceptComment($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.delete-comment', function(event) {
+    $(document).on("click", 'a.delete-comment', function(event) {
       event.preventDefault();
       deleteComment($(this).attr('id').substring(2));
     });
-    $(document).on("***REMOVED***ck", 'a.comment-markup', function(event) {
+    $(document).on("click", 'a.comment-markup', function(event) {
       event.preventDefault();
       toggleCommentMarkupBox($(this).attr('id').substring(2));
     });
@@ -399,7 +399,7 @@
     $('#mb' + id).toggle();
   }
 
-  /** Handle when the user ***REMOVED***cks on a sort by link. */
+  /** Handle when the user clicks on a sort by link. */
   function handleReSort(link) {
     var classes = link.attr('class').split(/\s+/);
     for (var i=0; i<classes.length; i++) {
@@ -421,7 +421,7 @@
   }
 
   /**
-   * Function to process a vote when a user ***REMOVED***cks an arrow.
+   * Function to process a vote when a user clicks an arrow.
    */
   function handleVote(link) {
     if (!opts.voting) {
@@ -431,7 +431,7 @@
 
     var id = link.attr('id');
     if (!id) {
-      // Didn't ***REMOVED***ck on one of the voting arrows.
+      // Didn't click on one of the voting arrows.
       return;
     }
     // If it is an unvote, the new vote value is 0,
@@ -502,7 +502,7 @@
         closeReply(id);
       })
       .find('input[type=button]')
-      .***REMOVED***ck(function() {
+      .click(function() {
         closeReply(id);
       });
     div.slideDown('fast', function() {
@@ -637,7 +637,7 @@
               alt: 'comment',
               title: title
             }))
-            .***REMOVED***ck(function(event) {
+            .click(function(event) {
               event.preventDefault();
               show($(this).attr('id').substring(2));
             })
@@ -653,7 +653,7 @@
               alt: 'close',
               title: 'close'
             }))
-            .***REMOVED***ck(function(event) {
+            .click(function(event) {
               event.preventDefault();
               hide($(this).attr('id').substring(2));
             })
@@ -802,7 +802,7 @@ $(document).ready(function() {
   // directly open comment window if requested
   var anchor = document.location.hash;
   if (anchor.substring(0, 9) == '#comment-') {
-    $('#ao' + anchor.substring(9)).***REMOVED***ck();
+    $('#ao' + anchor.substring(9)).click();
     document.location.hash = '#s' + anchor.substring(9);
   }
 });

@@ -240,7 +240,7 @@ var Documentation = {
    * init the domain index toggle buttons
    */
   initIndexTable : function() {
-    var togglers = $('img.toggler').***REMOVED***ck(function() {
+    var togglers = $('img.toggler').click(function() {
       var src = $(this).attr('src');
       var idnum = $(this).attr('id').substr(7);
       $('tr.cg-' + idnum).toggle();
@@ -250,7 +250,7 @@ var Documentation = {
         $(this).attr('src', src.substr(0, src.length-8) + 'minus.png');
     }).css('display', '');
     if (DOCUMENTATION_OPTIONS.COLLAPSE_INDEX) {
-        togglers.***REMOVED***ck();
+        togglers.click();
     }
   },
 

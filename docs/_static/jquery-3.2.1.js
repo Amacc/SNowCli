@@ -4883,7 +4883,7 @@ var documentElement = document.documentElement;
 
 var
 	rkeyEvent = /^key/,
-	rmouseEvent = /^(?:mouse|pointer|contextmenu|drag|drop)|***REMOVED***ck/,
+	rmouseEvent = /^(?:mouse|pointer|contextmenu|drag|drop)|click/,
 	rtypenamespace = /^([^.]*)(?:\.(.+)|)/;
 
 function returnTrue() {
@@ -5237,17 +5237,17 @@ jQuery.event = {
 			cur.nodeType &&
 
 			// Support: Firefox <=42
-			// Suppress spec-violating ***REMOVED***cks indicating a non-primary pointer button (trac-3861)
-			// https://www.w3.org/TR/DOM-Level-3-Events/#event-type-***REMOVED***ck
+			// Suppress spec-violating clicks indicating a non-primary pointer button (trac-3861)
+			// https://www.w3.org/TR/DOM-Level-3-Events/#event-type-click
 			// Support: IE 11 only
-			// ...but not arrow key "***REMOVED***cks" of radio inputs, which can have `button` -1 (gh-2343)
-			!( event.type === "***REMOVED***ck" && event.button >= 1 ) ) {
+			// ...but not arrow key "clicks" of radio inputs, which can have `button` -1 (gh-2343)
+			!( event.type === "click" && event.button >= 1 ) ) {
 
 			for ( ; cur !== this; cur = cur.parentNode || this ) {
 
 				// Don't check non-elements (#13208)
-				// Don't process ***REMOVED***cks on disabled elements (#6911, #8165, #11382, #11764)
-				if ( cur.nodeType === 1 && !( event.type === "***REMOVED***ck" && cur.disabled === true ) ) {
+				// Don't process clicks on disabled elements (#6911, #8165, #11382, #11764)
+				if ( cur.nodeType === 1 && !( event.type === "click" && cur.disabled === true ) ) {
 					matchedHandlers = [];
 					matchedSelectors = {};
 					for ( i = 0; i < delegateCount; i++ ) {
@@ -5341,17 +5341,17 @@ jQuery.event = {
 			},
 			delegateType: "focusout"
 		},
-		***REMOVED***ck: {
+		click: {
 
 			// For checkbox, fire native event so checked state will be right
 			trigger: function() {
-				if ( this.type === "checkbox" && this.***REMOVED***ck && nodeName( this, "input" ) ) {
-					this.***REMOVED***ck();
+				if ( this.type === "checkbox" && this.click && nodeName( this, "input" ) ) {
+					this.click();
 					return false;
 				}
 			},
 
-			// For cross-browser consistency, don't fire native .***REMOVED***ck() on links
+			// For cross-browser consistency, don't fire native .click() on links
 			_default: function( event ) {
 				return nodeName( event.target, "a" );
 			}
@@ -5487,8 +5487,8 @@ jQuery.each( {
 	keyCode: true,
 	button: true,
 	buttons: true,
-	***REMOVED***entX: true,
-	***REMOVED***entY: true,
+	clientX: true,
+	clientY: true,
 	offsetX: true,
 	offsetY: true,
 	pointerId: true,
@@ -5507,7 +5507,7 @@ jQuery.each( {
 			return event.charCode != null ? event.charCode : event.keyCode;
 		}
 
-		// Add which for ***REMOVED***ck: 1 === left; 2 === middle; 3 === right
+		// Add which for click: 1 === left; 2 === middle; 3 === right
 		if ( !event.which && button !== undefined && rmouseEvent.test( event.type ) ) {
 			if ( button & 1 ) {
 				return 1;
@@ -7613,7 +7613,7 @@ jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( i, name ) 
 
 
 var rfocusable = /^(?:input|select|textarea|button)$/i,
-	r***REMOVED***ckable = /^(?:a|area)$/i;
+	rclickable = /^(?:a|area)$/i;
 
 jQuery.fn.extend( {
 	prop: function( name, value ) {
@@ -7677,7 +7677,7 @@ jQuery.extend( {
 
 				if (
 					rfocusable.test( elem.nodeName ) ||
-					r***REMOVED***ckable.test( elem.nodeName ) &&
+					rclickable.test( elem.nodeName ) &&
 					elem.href
 				) {
 					return 0;
@@ -8278,7 +8278,7 @@ jQuery.fn.extend( {
 } );
 
 
-jQuery.each( ( "blur focus focusin focusout resize scroll ***REMOVED***ck dbl***REMOVED***ck " +
+jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 	"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
 	"change select submit keydown keypress keyup contextmenu" ).split( " " ),
 	function( i, name ) {
@@ -9992,8 +9992,8 @@ jQuery.fn.extend( {
 		win = doc.defaultView;
 
 		return {
-			top: rect.top + win.pageYOffset - docElem.***REMOVED***entTop,
-			left: rect.left + win.pageXOffset - docElem.***REMOVED***entLeft
+			top: rect.top + win.pageYOffset - docElem.clientTop,
+			left: rect.left + win.pageXOffset - docElem.clientLeft
 		};
 	},
 
@@ -10133,19 +10133,19 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 					// $( window ).outerWidth/Height return w/h including scrollbars (gh-1729)
 					return funcName.indexOf( "outer" ) === 0 ?
 						elem[ "inner" + name ] :
-						elem.document.documentElement[ "***REMOVED***ent" + name ];
+						elem.document.documentElement[ "client" + name ];
 				}
 
 				// Get document width or height
 				if ( elem.nodeType === 9 ) {
 					doc = elem.documentElement;
 
-					// Either scroll[Width/Height] or offset[Width/Height] or ***REMOVED***ent[Width/Height],
+					// Either scroll[Width/Height] or offset[Width/Height] or client[Width/Height],
 					// whichever is greatest
 					return Math.max(
 						elem.body[ "scroll" + name ], doc[ "scroll" + name ],
 						elem.body[ "offset" + name ], doc[ "offset" + name ],
-						doc[ "***REMOVED***ent" + name ]
+						doc[ "client" + name ]
 					);
 				}
 

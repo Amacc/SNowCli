@@ -9,8 +9,8 @@ To connect to your ServiceNow instance the environment variables
 The authentication used is JSONv2.
 
 
-.. ***REMOVED***ck:: snow***REMOVED***.main:main
-   :prog: snow***REMOVED***
+.. click:: snowcli.main:main
+   :prog: snowcli
    :show-nested:
 
 
@@ -47,7 +47,7 @@ The authentication used is JSONv2.
 
 **Example**::
 
-    snow***REMOVED*** Task fetch_one
+    snowcli Task fetch_one
 
     >>{
     >>    "applied": "false",
@@ -69,18 +69,18 @@ The authentication used is JSONv2.
 **Custom Table Example**::
 
     # using custom Tables
-    snow***REMOVED*** incident_list.do fetch_one --custom-table --param number INC0000053
+    snowcli incident_list.do fetch_one --custom-table --param number INC0000053
 
     >>{"parent": "", "made_sla": "true", ...
 
 **Fetch Server Example**::
 
-    snow***REMOVED*** Server fetch_one --param name Car-3
+    snowcli Server fetch_one --param name Car-3
 
     >>{"firewall_status": "", "os_address_width": "", "operational_status":...
 
 **Create Server Example**::
 
-    snow***REMOVED*** Server create --param name TestServer1
+    snowcli Server create --param name TestServer1
 
     >>{"records": [{"firewall_status": "Intranet", "os_address_width": "", ...

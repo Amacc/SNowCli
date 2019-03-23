@@ -1,6 +1,6 @@
-''' Base module for ***REMOVED***
+''' Base module for cli
 
-.. ***REMOVED***ck:: snow***REMOVED***.main:main
+.. click:: snowcli.main:main
    :prog: snowclli
    :show-nested:
 
@@ -9,11 +9,11 @@
 from typing import Tuple, List
 
 import json
-import ***REMOVED***ck
+import click
 
 from toolz.curried import pipe
 from servicenow import ServiceNow, Connection
-from snow***REMOVED*** import conf
+from snowcli import conf
 
 def __convert_to_dict(tuple_set: List[Tuple[str, str]])-> dict:
     return {v[0]:v[1] for v in tuple_set}
@@ -34,13 +34,13 @@ def __get_connection():
         username=conf.USERNAME, password=conf.PASSWORD,
         instance=conf.INSTANCE, api='JSONv2')
 
-@***REMOVED***ck.option('--custom-table', 'custom', is_flag=True,
+@click.option('--custom-table', 'custom', is_flag=True,
               help="Used to interact with data in custom table")
-@***REMOVED***ck.option('--param', 'param', multiple=True, type=***REMOVED***ck.Tuple([str, str]),
+@click.option('--param', 'param', multiple=True, type=click.Tuple([str, str]),
               help="Used to pass paramaters to the servicenow query.")
-@***REMOVED***ck.argument('action')
-@***REMOVED***ck.argument('table')
-@***REMOVED***ck.command()
+@click.argument('action')
+@click.argument('table')
+@click.command()
 def main(table, action, param, custom):
     ''' Documentation: https://amacc.github.io/SNowCli/ '''
     param = __convert_to_dict(param)
