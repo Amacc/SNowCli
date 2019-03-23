@@ -2,4 +2,5 @@ Click==7.0
 toolz==0.9.0
 servicenow==2.1.0
 pylint==2.2.2
+bumpversion==0.5.3
 sphinxcontrib-sr***REMOVED***nks==0.2.1
