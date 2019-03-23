@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Snow CLI Commands &mdash; snowcli  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SNOWCLI" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> snowcli
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Snow CLI Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#snowcli">snowcli</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">snowcli</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Snow CLI Commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/cli.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="snow-cli-commands">
+<h1>Snow CLI Commands<a class="headerlink" href="#snow-cli-commands" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>To connect to your ServiceNow instance the environment variables
+<strong>SNOW_USERNAME</strong>, <strong>SNOW_INSTANCE</strong>, <strong>SNOW_PASSWORD</strong> are used.
+The authentication used is JSONv2.</p>
+<div class="section" id="snowcli">
+<h2>snowcli<a class="headerlink" href="#snowcli" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>snowcli <span class="o">[</span>OPTIONS<span class="o">]</span> TABLE ACTION
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-snowcli-param">
+<code class="descname">--param</code><code class="descclassname"> &lt;param&gt;</code><a class="headerlink" href="#cmdoption-snowcli-param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to pass paramaters to the servicenow query.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-snowcli-custom-table">
+<code class="descname">--custom-table</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-snowcli-custom-table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to interact with data in custom table</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="option">
+<dt id="cmdoption-snowcli-arg-table">
+<code class="descname">TABLE</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-snowcli-arg-table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-snowcli-arg-action">
+<code class="descname">ACTION</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-snowcli-arg-action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<p><strong>Included Tables</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Call</li>
+<li>Change</li>
+<li>Group</li>
+<li>Incident</li>
+<li>Journal</li>
+<li>Problem</li>
+<li>Request</li>
+<li>Server</li>
+<li>Task</li>
+<li>Ticket</li>
+<li>User</li>
+<li>Utils</li>
+</ul>
+</div></blockquote>
+<p><strong>Suported Actions</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>create</li>
+<li>create_multiple</li>
+<li>delete</li>
+<li>delete_multiple</li>
+<li>fetch_all</li>
+<li>fetch_all_by_query</li>
+<li>fetch_one</li>
+<li>format</li>
+<li>last_updated</li>
+<li>list</li>
+<li>list_by_query</li>
+<li>update</li>
+</ul>
+</div></blockquote>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snowcli</span> <span class="n">Task</span> <span class="n">fetch_one</span>
+
+<span class="o">&gt;&gt;</span><span class="p">{</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;applied&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_mod_count&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_updated_on&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-01-20 11:18:15&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_tags&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;applied_date&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;ci_item&quot;</span><span class="p">:</span> <span class="s2">&quot;e81865980a0a0aa700d60a8cd1283082&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_id&quot;</span><span class="p">:</span> <span class="s2">&quot;02f6c8724f032300173da88ca310c730&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_updated_by&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;c2f6c8724f032300173da88ca310c72f&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_created_on&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-01-20 11:18:15&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;xml&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;manual_proposed_change&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;sys_created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<span class="o">&gt;&gt;</span>    <span class="s2">&quot;__status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span>
+<span class="o">&gt;&gt;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Custom Table Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># using custom Tables</span>
+<span class="n">snowcli</span> <span class="n">incident_list</span><span class="o">.</span><span class="n">do</span> <span class="n">fetch_one</span> <span class="o">--</span><span class="n">custom</span><span class="o">-</span><span class="n">table</span> <span class="o">--</span><span class="n">param</span> <span class="n">number</span> <span class="n">INC0000053</span>
+
+<span class="o">&gt;&gt;</span><span class="p">{</span><span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;made_sla&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Fetch Server Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snowcli</span> <span class="n">Server</span> <span class="n">fetch_one</span> <span class="o">--</span><span class="n">param</span> <span class="n">name</span> <span class="n">Car</span><span class="o">-</span><span class="mi">3</span>
+
+<span class="o">&gt;&gt;</span><span class="p">{</span><span class="s2">&quot;firewall_status&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;os_address_width&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;operational_status&quot;</span><span class="p">:</span><span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Create Server Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">snowcli</span> <span class="n">Server</span> <span class="n">create</span> <span class="o">--</span><span class="n">param</span> <span class="n">name</span> <span class="n">TestServer1</span>
+
+<span class="o">&gt;&gt;</span><span class="p">{</span><span class="s2">&quot;records&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;firewall_status&quot;</span><span class="p">:</span> <span class="s2">&quot;Intranet&quot;</span><span class="p">,</span> <span class="s2">&quot;os_address_width&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="SNOWCLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Adam Mcchesney
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
