@@ -2,3 +2,4 @@ Click==7.0
 toolz==0.9.0
 servicenow==2.1.0
 pylint==2.2.2
+sphinxcontrib-srclinks==0.2.1
